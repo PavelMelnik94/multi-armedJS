@@ -36,4 +36,32 @@
 ### .click(handler) - события клика
 #### уже написанное событие блика, которое принимает отдельно написанную функцию-handler
 
+<hr>
 
+# аттрибуты
+
+### .setAttr(attrNname, attrValue) - добавить аттрибут и его значение
+#### $('div').setAttr('data-active', 'true')
+
+### .getAttr(attrName) - возвращает ЗНАЧЕНИЕ аттрибута у указаного элемента.
+#### const attribute = element.getAttribute(attributeName);
+
+### .hasAttr(name, value) -  возвращает логическое значение указывающее, имеет ли используемый элемент используемое атрибут или нет.
+#### var result = element.hasAttribute(attName);
+
+
+
+#### сниппены:
+
+переключение активного класса по клику на конкретный элемент.
+
+$('element').on('click', function() {
+    $(this).toggleClass('active')
+})
+
+
+проверка, существует ли атрибут, перед тем как задать значение
+
+if ($('.selector')hasAttribute("align")) {
+  $(this).setAttribute("align", "center");
+}

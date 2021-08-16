@@ -1,3 +1,10 @@
 import  './lib/lib';
+import $ from './lib/lib';
 
-$('.active').addClass('hello', 'world');
+$('div').on('click', sayhello);
+
+function sayhello() {
+    console.log('hellow');
+}
+
+$('div').off('click', sayhello);
