@@ -1,2 +1,3 @@
-import './lib/core';
+import  './lib/lib';
 
+$('div').show();

@@ -1,5 +1,5 @@
 const $ = function(selector) {
-    return new $.prototype.init();
+    return new $.prototype.init(selector);
 };
 
 $.prototype.init = function(selector) {
@@ -15,4 +15,4 @@ $.prototype.init.prototype = $.prototype;
 
 window.$ = $;
 
-export default $;
+export default $; 
