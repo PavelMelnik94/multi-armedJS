@@ -1,5 +1,5 @@
 import $ from './core';
 import './modules/display';
-// import './modules/clesses';
+import './modules/classes';
 
 export default $;
