@@ -194,6 +194,37 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.index = function () {
   };
 
   return childs.findIndex(findMyIndex);
+}; //найти элементы с подходящим селектором среди коллекции
+
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selector) {
+  let numberOfItems = 0;
+  const copyObject = Object.assign({}, this);
+  let counter = 0;
+
+  for (let i = 0; i < copyObject.length; i++) {
+    const arr = copyObject[i].querySelectorAll(selector);
+
+    if (arr.length == 0) {
+      continue;
+    }
+
+    for (let j = 0; j < arr.length; j++) {
+      this[counter] = arr[j];
+      counter++;
+    }
+
+    numberOfItems += arr.length;
+  }
+
+  this.length = numberOfItems;
+  const objLength = Object.keys(this).length;
+
+  for (; numberOfItems < objLength; numberOfItems++) {
+    delete this[numberOfItems];
+  }
+
+  return this;
 };
 
 /***/ }),
@@ -394,8 +425,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
 
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('div').html('<button>sdad</button>').html();
-console.log(Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('div > button').eq(0));
 
 /***/ })
 

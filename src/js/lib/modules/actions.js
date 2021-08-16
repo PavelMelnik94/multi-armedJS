@@ -39,3 +39,34 @@ $.prototype.index = function() {
     
     return childs.findIndex(findMyIndex);
 };
+
+
+//найти элементы с подходящим селектором среди коллекции
+$.prototype.find = function (selector) {
+    let numberOfItems = 0;
+    const copyObject = Object.assign({}, this);
+    let counter = 0;
+
+    for (let i = 0; i < copyObject.length; i++) {
+        const arr = copyObject[i].querySelectorAll(selector);
+        if(arr.length == 0) {
+            continue;
+        }
+
+        for (let j =0; j < arr.length; j++) {
+            this[counter] = arr[j];
+            counter++;
+        }
+
+        numberOfItems += arr.length;
+    }
+
+    this.length = numberOfItems;
+
+    const objLength = Object.keys(this).length;
+    for (; numberOfItems < objLength; numberOfItems++) {
+        delete this[numberOfItems];
+    }
+
+    return this;
+};
