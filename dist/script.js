@@ -600,15 +600,20 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
- // $('#first').on('click', ()=> {
-//     $('div').eq(1).fadeToggle(800);
-// });
-// $('[data-count="second"]').on('click', ()=> {
-//     $('div').eq(2).fadeToggle(800);
-// });
-// $('button').eq(2).on('click', () => {
-//     $('.w-500').fadeToggle(800);
-// });
+ // $('.wrap').html(
+//     `<div class="dropdown">
+//             <button class="btn btn-primary dropdown-toggle" id='dropdownMenuButton'>
+//                 Dropdown button
+//             </button>
+//             <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+//                 <a href="#" class="dropdown-item">action 1</a>
+//                 <a href="#" class="dropdown-item">action 2</a>
+//                 <a href="#" class="dropdown-item">action 3</a>
+//             </div>
+//         </div> `
+// );
+//обязательно инициализировать дропдаун после вставки html
+// $('.dropdown-toggle').dropdown();
 
 /***/ })
 
