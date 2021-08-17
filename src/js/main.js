@@ -1,4 +1,4 @@
 import  './lib/lib';
 import $ from './lib/lib';
 
-console.log($('button').siblings());
+$('.active').fadeOut(1000, fadeIn(1000))
