@@ -1,26 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import './general/base.scss';
+@import './general/variables.scss';
+@import './general/typography.scss';
 
-body {
-    padding: 5rem;
-}
+//components
+@import './components/ui.scss';
 
-.parent > div {
-    margin-top: 1rem;
-    width: 200px;
-    height: 200px;
-    border: 3px dashed white;
-    padding-top: 20px;
-    text-align: center;
-}
+//helpers
+@import './helpers/classes.scss';
 
-.active {
-    background-color: magenta;
-}
 
-.red {
-    background-color: red;
-}
