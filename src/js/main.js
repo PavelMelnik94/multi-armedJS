@@ -22,3 +22,27 @@ import $ from './lib/lib';
 
 
 
+$('#trigger').click(()=> $('#trigger').createModal({
+    text: {
+        title: 'modal title',
+        body: 'modal body',
+    },
+    btns: {
+        count: 2,
+        settings: [
+            [
+                'Close',
+                ['btn-danger', 'mr-10'],
+                true
+            ],
+            [
+                'Save changes',
+                ['btn-success'],
+                false,
+                () => {
+                    alert('данные сохранены');
+                }
+            ]
+        ]
+    }
+}));
