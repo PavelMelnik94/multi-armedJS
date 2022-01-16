@@ -1,15 +1,78 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  line-height: 1.5;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: none;
+  outline: #000 dotted 2px;
+  outline-offset: 0.05em;
+}
+
+
+
+//!TODO поменять
 .container {
-    max-width: 1140px; //1140px классический размер
-    padding: 0px 15px;
-    margin: 0 auto;
+  max-width: 1140px; //1140px классический размер
+  padding: 0px 15px;
+  margin: 0 auto;
 }
 
 .container-fluid {
-    width: 100%;
+  width: 100%;
 }
+
+//!TODO поменять
+a[href*="//"]:not([href*="yourwebsite.com"])
+{
+  text-decoration: dotted;
+  color: red;
+}
+
+
+a[href^="http"]:empty::before {
+    content: attr(href);
+  }
+
+
+  a[href]:not([class]) {
+    color: #008000;
+    text-decoration: underline;
+  }
+
+
+  //img
+
+  img {
+    display: block;
+    font-family: sans-serif;
+    font-weight: 300;
+    height: auto;
+    line-height: 2;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  img:before {
+    content: "Упс, изображение ниже поломалось :(";
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  img::after {
+    content: "(url: " attr(src) ")";
+    display: block;
+    font-size: 12px;
+  }

@@ -2,7 +2,6 @@ import $ from '../core';
 
 $.prototype.slider = function() {
     const slides = document.querySelectorAll('.slide');
-console.log(slides)
 
 for (const slide of slides) {
 	slide.addEventListener('click', () => {
@@ -20,4 +19,4 @@ slides.forEach((s) => {
 
 };
 
-$('.slide').slider();
+$('.slider-wrapper').slider();

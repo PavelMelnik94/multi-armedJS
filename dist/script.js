@@ -395,7 +395,6 @@ __webpack_require__.r(__webpack_exports__);
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.slider = function () {
   const slides = document.querySelectorAll('.slide');
-  console.log(slides);
 
   for (const slide of slides) {
     slide.addEventListener('click', () => {
@@ -411,7 +410,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.slider = function () {
   }
 };
 
-Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('.slide').slider();
+Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('.slider-wrapper').slider();
 
 /***/ }),
 

@@ -1,8 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
 
 * {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300; 
-    // font-size: calc(18px + 0.25vw) //не работает в сафари для mac
-    // font-size: calc(112.5% + 0.5vw) // работает в сафари для mac
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  // font-size: calc(18px + 0.25vw) //не работает в сафари для mac
+  // font-size: calc(112.5% + 0.5vw) // работает в сафари для mac
+}
+
+html {
+  font-size: 100%;
+}
+
+
+
+
+$maxWidth: 1280;
+
+//миксин принимает пк размер и мобильный размер, а далее делает безшовный переход
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+      font-size: calc(
+        #{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth})
+      );
+    }
+    @media (min-width: 767px) {
+      font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+    }
+  }
+
+
+h1 {
+  @include adaptiv-font(40, 24);
+}
+
+h2 {
+    @include adaptiv-font(28, 18);
 }
