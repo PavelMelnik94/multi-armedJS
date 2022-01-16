@@ -438,6 +438,63 @@ Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-tabpanel] .tab-item
 
 /***/ }),
 
+/***/ "./src/js/lib/components/verticalSlider.js":
+/*!*************************************************!*\
+  !*** ./src/js/lib/components/verticalSlider.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.slider = function () {
+  console.log();
+
+  for (let i = 0; i < this.length; i++) {
+    const upBtn = this[i].querySelector('.up-button');
+    const downBtn = this[i].querySelector('.down-button');
+    const container = document.querySelector(`.${this[i].className}`);
+    const sideBar = this[i].querySelector('.sidebar');
+    const mainSlide = this[i].querySelector('.main-slide');
+    const slidesCount = mainSlide.querySelectorAll('div').length;
+    let activeSlideIndex = 0;
+    sideBar.style.top = `-${(slidesCount - 1) * 100}vh`;
+    upBtn.addEventListener('click', () => {
+      changeSlide('up');
+    });
+    downBtn.addEventListener('click', () => {
+      changeSlide('down');
+    });
+
+    const changeSlide = direction => {
+      if (direction === 'up') {
+        activeSlideIndex++;
+
+        if (activeSlideIndex === slidesCount) {
+          activeSlideIndex = 0;
+        }
+      } else if (direction === 'down') {
+        activeSlideIndex--;
+
+        if (activeSlideIndex < 0) {
+          activeSlideIndex = slidesCount - 1;
+        }
+      }
+
+      const height = container.clientHeight;
+      mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
+      sideBar.style.transform = `translateY(${activeSlideIndex * height}px)`;
+    };
+  }
+};
+
+Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('.vertical-slider__wrapper').slider();
+
+/***/ }),
+
 /***/ "./src/js/lib/core.js":
 /*!****************************!*\
   !*** ./src/js/lib/core.js ***!
@@ -495,7 +552,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_accordion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/accordion */ "./src/js/lib/components/accordion.js");
 /* harmony import */ var _components_carousel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/carousel */ "./src/js/lib/components/carousel.js");
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/slider */ "./src/js/lib/components/slider.js");
-/* harmony import */ var _services_requests__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/requests */ "./src/js/lib/services/requests.js");
+/* harmony import */ var _components_verticalSlider__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/verticalSlider */ "./src/js/lib/components/verticalSlider.js");
+/* harmony import */ var _services_requests__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/requests */ "./src/js/lib/services/requests.js");
  //utilits
 
 
@@ -504,6 +562,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  //components
+
 
 
 

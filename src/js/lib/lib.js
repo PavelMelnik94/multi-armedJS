@@ -16,6 +16,7 @@ import './components/tab';
 import './components/accordion';
 import './components/carousel';
 import './components/slider';
+import './components/verticalSlider';
 
 
 //rest
