@@ -67,19 +67,19 @@ html {
 
 @media (max-width: 767px) {
   h1 {
-    font-size: calc( 24px + 27.2 * ((100vw - 320px) / 1280)); } }
+    font-size: calc( 25px + 51 * ((100vw - 320px) / 1280)); } }
 
 @media (min-width: 767px) {
   h1 {
-    font-size: calc(24px + 16 * (100vw / 1280)); } }
+    font-size: calc(25px + 30 * (100vw / 1280)); } }
 
 @media (max-width: 767px) {
   h2 {
-    font-size: calc( 18px + 17 * ((100vw - 320px) / 1280)); } }
+    font-size: calc( 18px + 37.4 * ((100vw - 320px) / 1280)); } }
 
 @media (min-width: 767px) {
   h2 {
-    font-size: calc(18px + 10 * (100vw / 1280)); } }
+    font-size: calc(18px + 22 * (100vw / 1280)); } }
 
 .btn {
   display: inline-block;

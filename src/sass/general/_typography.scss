@@ -32,9 +32,9 @@ $maxWidth: 1280;
 
 
 h1 {
-  @include adaptiv-font(40, 24);
+  @include adaptiv-font(55, 25);
 }
 
 h2 {
-    @include adaptiv-font(28, 18);
+    @include adaptiv-font(40, 18);
 }
